@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/orders/orders",
+    "pages/shop/shop",
+    "pages/mine/paying/paying",
+    "pages/mine/address/addressList",
+    "pages/mine/orderDetail/detail",
+    "pages/shop/goods/goodsDetail",
+    "pages/mine/fillOrder/fillOrder",
+    "pages/mine/shoppingCar/shoppingCar",
+    "pages/mine/collect/collect",
+    "pages/mine/address/add/addAddress",
+    "utils/login/login",
+    "pages/index/like/likeList",
+    "pages/index/opinion/opinion",
+    "pages/index/new/newList",
+    "pages/mine/mine",
+    "pages/index/notice/noticeList",
+    "pages/auth/auth",
+    "pages/index/opinion/history/history",
+    "pages/index/result/result",
+    "pages/mine/address/edit/editAddress"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#0eb7ef",
+    "navigationBarTitleText": "兰州大学在线餐饮",
+    "navigationBarTextStyle": "white"
+  }
+}
