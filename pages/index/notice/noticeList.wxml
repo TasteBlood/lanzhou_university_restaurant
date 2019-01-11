@@ -3,7 +3,7 @@
   <view wx:if="{{list.length>0}}">
       <block wx:for="{{list}}" wx:key="index">
         <view class='notice-item' bindtap='onClick' data-item="{{item}}">
-      <image wx:if="{{item.pic}}" src='{{item.pic}}'></image>
+      <image wx:if="{{item.pic}}" src='{{item.pic}}' lazy-load mode='aspectFit'></image>
       <view class='notice-content'>
         <text class='content'>{{item.title}}</text>
         <view class='time'>
@@ -23,6 +23,6 @@
       <image src='{{item}}' class='pic'></image>
     </block>
     <text class='content'>{{currentItem.content}}</text>
-    <button style='width:200rpx;height:60rpx;font-size:26rpx;margin-top:10rpx;' type='primary' bindtap='onClose'>关闭</button>
+    <button style='width:200rpx;height:60rpx;font-size:26rpx;margin-top:10rpx;' class="default-button" bindtap='onClose'>关闭</button>
   </view>
 </view>

@@ -8,24 +8,40 @@ Page({
   data: {
     dataList:[]
   },
-
+  data2:{
+    noMore:false,
+    load:false,
+    currentPage:1
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: async function (options) {
-    let res = await $request.getOpinions(1,50);
-    if(res){
+  onLoad:function (options) {
+    this.loadData(this.data2.currentPage)
+  },
+  async loadData(pageNum){
+    if(this.data2.load)
+      return;
+    this.data2.load = true;
+    let res = await $request.getOpinions(pageNum, 50);
+    console.log(res)
+    if (res&&res.data) {
+      if(res.data.isLastPage){
+        this.data2.noMore = true;
+      }else{
+        this.data2.currentPage ++;
+      }
       this.setData({
-        dataList:res.data.list
+        dataList: pageNum === 1 ? res.data.list : this.data.dataList.concat(res.data.list)
       });
     }
+    this.data2.load = false;
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
@@ -60,7 +76,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if(this.data2.noMore)
+      return;
+    this.loadData(this.currentPage);
   },
 
   /**

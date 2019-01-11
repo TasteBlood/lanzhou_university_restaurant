@@ -157,23 +157,23 @@ Page({
     this.setData({
       loadCook: false
     });
-    //加载分菜员数据
-    this.setData({
-      loadOther: true
-    });
-    res = await $http.getFronts(1, 20, 3);
-    if (res&& res.data) {
-      this.setData({
-        otherList: res.data.list
-      });
-    } else {
-      this.setData({
-        otherList: []
-      });
-    }
-    this.setData({
-      loadOther: false
-    });
+    // //加载分菜员数据
+    // this.setData({
+    //   loadOther: true
+    // });
+    // res = await $http.getFronts(1, 20, 3);
+    // if (res&& res.data) {
+    //   this.setData({
+    //     otherList: res.data.list
+    //   });
+    // } else {
+    //   this.setData({
+    //     otherList: []
+    //   });
+    // }
+    // this.setData({
+    //   loadOther: false
+    // });
     this.load = false;
     wx.stopPullDownRefresh();
     wx.hideNavigationBarLoading();

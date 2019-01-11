@@ -130,7 +130,7 @@
     background-color: white;
 }
 .swiper-tab-item{
-    width: 30%; 
+    width: 50%; 
     color:#414141;
     font-size: 32rpx;
     padding: 14rpx;
@@ -210,6 +210,18 @@ swiper{
   text-overflow: ellipsis;
   text-align: left;
 }
+.address{
+  color: #717171;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
 
 .dish-type{
   font-size: 26rpx;
@@ -248,6 +260,6 @@ swiper{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin-top: 20rpx;
+  margin-top: 10rpx;
   align-items: center;
 }

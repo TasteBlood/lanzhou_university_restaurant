@@ -14,9 +14,9 @@ const getFronts = async (pageNum,pageSize,type)=>{
 /**
  * 关键字查询菜品
  */
-const getDishesByName = async (name)=>{
+const getDishesByName = async (name,pageNum)=>{
   try{
-    return await $http.post('/weixin/getAllDisheByName',{dishesName:name,pageSize:10},true);
+    return await $http.post('/weixin/getAllDisheByName', { dishesName: name, pageNum:pageNum,pageSize:10},true);
   }catch(e){
     return null;
   }

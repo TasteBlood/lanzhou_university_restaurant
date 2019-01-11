@@ -10,12 +10,18 @@ Page({
     dishList:[]
   },
   keyWords:'',
+  data2:{
+    currentPage:1,
+    noMore:false,
+    load:false
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
     this.keyWords = options.keyWords;
     //this.keyWords = "猪头";
+    this.loadData(this.data2.currentPage);
   },
 
   /**
@@ -24,25 +30,45 @@ Page({
   onReady: function () {
 
   },
+  //点击反馈
+  adviceClick(e){
+    console.log(e);
+    let type = 1;
+    let did = e.currentTarget.dataset.did;
 
+    wx.navigateTo({
+      url: `../opinion/opinion?type=${type}&id=${did}`,
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow:async function () {
-    let res = await $request.getDishesByName(this.keyWords);
+  onShow:function () {  
+    
+  },
+  async loadData(pageNum){
+    if (this.data2.load)
+      return;
+    this.data2.load = true;
+    let res = await $request.getDishesByName(this.keyWords, pageNum);
     console.log(res);
-    if(res){
+    if (res && res.data) {
+      if(res.data.isLastPage){
+        this.data2.noMore = true;
+      }else{
+        this.data2.currentPage ++;
+      }
       this.setData({
-        dishList: res.data.list
+        dishList: pageNum===1?res.data.list:this.data.dishList.concat(res.data.list)
       });
     }
+    this.data2.load = false;
   },
-
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    
   },
 
   /**
@@ -98,7 +124,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if(this.data2.noMore)
+      return;
+    this.loadData(this.data2.currentPage);
   },
 
   /**

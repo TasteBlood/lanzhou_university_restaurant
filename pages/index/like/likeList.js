@@ -224,7 +224,14 @@ Page({
       this.loadData(this.data2.otherPage, 10, 3);
     }
   },
+  callbackClick(e){
+    let id = e.currentTarget.dataset.did;
+    let type = e.currentTarget.dataset.type;
 
+    wx.navigateTo({
+      url: `../opinion/opinion?type=${type}&id=${id}`,
+    })
+  },
   /**
    * 当菜品点赞时
    */
@@ -246,8 +253,8 @@ Page({
           num = `dishList[${e.target.dataset.index}].click_num`;
           click = e.target.dataset.item.click_num;
         } else if (type === '2') {
-          num = `cookList[${e.target.dataset.index}].staffDomain.click_num`;
-          click = e.target.dataset.item.staffDomain.click_num;
+          num = `cookList[${e.target.dataset.index}].clickNum`;
+          click = e.target.dataset.item.clickNum;
         } else if (type === '3') {
           num = `otherList[${e.target.dataset.index}].staffDomain.click_num`;
           click = e.target.dataset.item.staffDomain.click_num;

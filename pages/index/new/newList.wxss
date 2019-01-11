@@ -15,8 +15,8 @@
     padding: 14rpx;
 }
 .selected{
-    color:#F65959;
-    border-bottom: 4rpx solid #F65959;
+    color:#0eb7ef;
+    border-bottom: 4rpx solid #0eb7ef;
 }
 swiper{
   text-align: center;
@@ -61,7 +61,7 @@ swiper{
 }
 
 .dish-item-content .price{
-  color: #ff4c4c;
+  color: #f28d29;
   font-size: 32rpx;
   margin-top: 10rpx;
   display: -webkit-box;

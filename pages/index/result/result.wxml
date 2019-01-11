@@ -26,11 +26,11 @@
         <view class='address'>
           <text>{{item.organDishesDomains[0].organWindowList[0].organFloorDomain.organCanteenDomain.name}}{{item.organDishesDomains[0].organWindowList[0].organFloorDomain.name}}{{item.organDishesDomains[0].organWindowList[0].name}}</text>
         </view>
-
       </view>
 
-      <view>
+      <view style='text-align:center'>
         <button class='default-button' style='width:100rpx;height:60rpx;line-height:60rpx;font-size:28rpx;' bindtap='onClickNum' data-did="{{item.organDishesDomains[0].id}}" data-type="1" data-item="{{item}}" data-index="{{index}}">赞</button>
+        <image src='../../../resources/images/callback.png' style='width:42rpx;height:42rpx;margin-top:18rpx;' bindtap='adviceClick' data-did="{{item.organDishesDomains[0].id}}"></image>
       </view>
     </view>
   </block>

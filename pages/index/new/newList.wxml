@@ -32,9 +32,9 @@
                   <text>{{item.canteenName}}{{item.floorName}}{{item.windowName}}</text>
                 </view>
               </view>
-
             <view>
               <button class='default-button' style='width:100rpx;height:60rpx;line-height:60rpx;font-size:28rpx;' bindtap='onClickNum' data-did="{{item.id}}" data-type="1" data-item="{{item}}" data-index="{{index}}">赞</button>
+              <image src='../../../resources/images/callback.png' style='width:42rpx;height:42rpx;margin-top:18rpx;' bindtap='callbackClick' data-id='{{item.id}}'></image>
             </view>
           </view>
           </block>
@@ -70,9 +70,9 @@
                   <text>{{item.canteenName}}{{item.floorName}}{{item.windowName}}</text>
                 </view>
               </view>
-
             <view>
               <button class='default-button' style='width:100rpx;height:60rpx;line-height:60rpx;font-size:28rpx;' bindtap='onClickNum' data-did="{{item.id}}" data-type="1" data-item="{{item}}" data-index="{{index}}">赞</button>
+              <image src='../../../resources/images/callback.png' style='width:42rpx;height:42rpx;margin-top:18rpx;' bindtap='callbackClick' data-id='{{item.id}}'></image>
             </view>
           </view>
           </block>
@@ -108,9 +108,9 @@
                   <text>{{item.canteenName}}{{item.floorName}}{{item.windowName}}</text>
                 </view>
               </view>
-
             <view>
               <button class='default-button' style='width:100rpx;height:60rpx;line-height:60rpx;font-size:28rpx;' bindtap='onClickNum' data-did="{{item.id}}" data-type="1" data-item="{{item}}" data-index="{{index}}">赞</button>
+              <image src='../../../resources/images/callback.png' style='width:42rpx;height:42rpx;margin-top:18rpx;' bindtap='callbackClick' data-id='{{item.id}}'></image>
             </view>
           </view>
           </block>

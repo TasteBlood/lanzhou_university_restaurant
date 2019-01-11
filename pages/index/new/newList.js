@@ -73,6 +73,14 @@ Page({
       this.loadData(this.wancanPage,3);
     }
   },
+  callbackClick(e){
+    let id = e.currentTarget.dataset.id;
+    let type = 1;
+
+    wx.navigateTo({
+      url: `../opinion/opinion?type=${type}&id=${id}`,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

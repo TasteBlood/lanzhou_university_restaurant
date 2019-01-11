@@ -48,7 +48,7 @@
     <!-- 点赞前三名菜品 -->
     <view class='like-panel'>
       <view class='like-title'>
-        <text>公众最爱菜品</text>
+        <text>最受欢迎菜品</text>
       </view>
       <view wx:if="{{dishList.length>0}}">
         <view class='like-panel-content'>
@@ -75,23 +75,24 @@
           </view>
     </view>
 
-    <!-- 点赞前三名厨师 -->
+    <!-- 点赞前几名后厨人员 -->
     <view class='like-panel'>
       <view class='like-title'>
-        <text>公众最爱厨师</text>
+        <text>最受欢迎后厨人员</text>
       </view>
       <view wx:if="{{cookList.length>0}}">
           <view class='like-panel-content'>
             <view class='like-panel-item' wx:for="{{cookList}}" wx:key="index">
               <view style='width:100%;text-align:center'>
-                <block wx:if="{{!item.staffDomain.pic}}">
+                <block wx:if="{{!item.pic}}">
                   <image src='../../resources/images/ic_no_image.png' class='pic' mode="aspectFill"></image>
                 </block>
                 <block wx:else>
-                  <image src='{{item.staffDomain.pic}}' class='pic' mode='aspectFill'></image>
+                  <image src='{{item.pic}}' class='pic' mode='aspectFill'></image>
                 </block>
               </view>
-              <text class='name'>{{item.staffDomain.name}}</text>
+              <text class='name'>{{item.name}}</text>
+              <text style='font-size:22rpx;color:#717171;margin-top:4rpx;'>{{item.canteenName}}{{item.floorName}}{{item.windowName}}</text>
             </view>
         </view>
       </view>
@@ -104,7 +105,7 @@
     </view>
 
     <!-- 点赞前三名分菜员 -->
-    <view class='like-panel'>
+    <!-- <view class='like-panel'>
       <view class='like-title'>
         <text>公众最爱分菜员</text>
       </view>
@@ -130,7 +131,7 @@
           </block>
           <block wx:else>暂无数据</block>
       </view>
-    </view>
+    </view> -->
 
   </view>
 </view>

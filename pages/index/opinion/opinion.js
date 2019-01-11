@@ -8,6 +8,10 @@ Page({
   data: {
     content:null
   },
+  data2:{
+    type:null,
+    id:0
+  },
   onInputChange(e){
     this.setData({
       content:e.detail.value
@@ -22,7 +26,7 @@ Page({
       return;
     }
     //提交数据
-    let res = await $request.addOpinion(this.data.content);
+    let res = await $request.addOpinion(this.data.content,this.data2.type,this.data2.id);
     if(res.code===1){
       wx.navigateBack({
         
@@ -44,7 +48,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.data2.type = options.type;
+    this.data2.id = options.id;
   },
 
   /**
