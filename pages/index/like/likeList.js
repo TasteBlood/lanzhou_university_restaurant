@@ -305,10 +305,18 @@ Page({
   async loadData(pageNum, pageSize, type) {
     // //默认加载全部的内容
     let select = this.data.selectData;
-    let res = await $request.getFronts(pageNum, pageSize, type,
-      select.restaurant.id ? select.restaurant.id : null,
-      select.floor.id ? select.floor.id : null,
-      select.window.id ? select.window.id : null);
+    let res = null;
+    if(type===1){
+      res = await $request.getFronts(pageNum, pageSize, type,
+        select.restaurant.id ? select.restaurant.id : null,
+        select.floor.id ? select.floor.id : null,
+        select.window.id ? select.window.id : null);
+    }else if(type===2){
+      res = await $request.getFronts(pageNum, pageSize, type,
+        null,
+        null,
+        null);
+    }
     console.log(res);
     if (res.data) {
       if (type === 1) {
